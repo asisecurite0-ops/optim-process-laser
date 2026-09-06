@@ -1,5 +1,4 @@
 import io
-import urllib.parse
 import streamlit as st
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
@@ -89,34 +88,35 @@ st.download_button(
     mime="application/pdf"
 )
 
-# Section Capture de Prospects avec envoi d'Email direct
+# Section Capture de Prospects (Formulaire Direct via FormSubmit)
 st.markdown("---")
 st.subheader("📩 Demander un accès complet (Version Entreprise)")
 st.write("Obtenez un accès illimité à tous les matériaux (Inconel, Aluminium, Inox) et à l'export d'algorithmes personnalisés.")
 
-with st.form("form_contact"):
-    nom = st.text_input("Nom & Prénom")
-    entreprise = st.text_input("Nom de l'Entreprise / Atelier")
-    email_client = st.text_input("Adresse Email Professionnelle")
-    soumis = st.form_submit_button("Envoyer la demande de démo")
+form_html = """
+<form action="https://formsubmit.co/asisecurite0@gmail.com" method="POST" style="background-color: #f8f9fa; padding: 20px; border-radius: 10px;">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://optim-process-laser-6mvej4zrfiw74ktjyad8g3.streamlit.app/">
     
-    if soumis:
-        if email_client and nom:
-            # Structuration du message e-mail
-            sujet = urllib.parse.quote(f"Demande de Démo SaaS - {entreprise}")
-            corps = urllib.parse.quote(
-                f"Bonjour,\n\nJe souhaite obtenir une démonstration de la version Entreprise.\n\n"
-                f"Nom : {nom}\n"
-                f"Entreprise : {entreprise}\n"
-                f"Email : {email_client}\n"
-            )
-            
-            lien_email = f"mailto:asisecurite0@gmail.com?subject={sujet}&body={corps}"
-            
-            st.success(f"Merci {nom} ! Cliquez sur le bouton ci-dessous pour m'envoyer directement votre demande par email.")
-            st.markdown(
-                f'<a href="{lien_email}" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #0E1117; color: white; text-decoration: none; border-radius: 5px;">✉️ Confirmer l\'envoi à asisecurite0@gmail.com</a>', 
-                unsafe_allow_html=True
-            )
-        else:
-            st.error("Veuillez remplir au moins votre nom et votre adresse email.")
+    <div style="margin-bottom: 10px;">
+        <label style="font-weight: bold; color: #333;">Nom & Prénom</label><br>
+        <input type="text" name="Nom" required style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+    </div>
+    
+    <div style="margin-bottom: 10px;">
+        <label style="font-weight: bold; color: #333;">Nom de l'Entreprise / Atelier</label><br>
+        <input type="text" name="Entreprise" required style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+    </div>
+    
+    <div style="margin-bottom: 15px;">
+        <label style="font-weight: bold; color: #333;">Adresse Email Professionnelle</label><br>
+        <input type="email" name="Email" required style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+    </div>
+    
+    <button type="submit" style="background-color: #FF4B4B; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
+        🚀 Envoyer la demande de démo
+    </button>
+</form>
+"""
+
+st.components.v1.html(form_html, height=360)
