@@ -94,29 +94,29 @@ st.subheader("📩 Demander un accès complet (Version Entreprise)")
 st.write("Obtenez un accès illimité à tous les matériaux (Inconel, Aluminium, Inox) et à l'export d'algorithmes personnalisés.")
 
 form_html = """
-<form action="https://formsubmit.co/asisecurite0@gmail.com" method="POST" style="background-color: #f8f9fa; padding: 20px; border-radius: 10px;">
+<form action="https://formsubmit.co/asisecurite0@gmail.com" method="POST" style="background-color: #f8f9fa; padding: 20px; border-radius: 10px; font-family: sans-serif;">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="https://optim-process-laser-6mvej4zrfiw74ktjyad8g3.streamlit.app/">
     
-    <div style="margin-bottom: 10px;">
-        <label style="font-weight: bold; color: #333;">Nom & Prénom</label><br>
-        <input type="text" name="Nom" required style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+    <div style="margin-bottom: 12px;">
+        <label style="font-weight: bold; color: #333; display: block; margin-bottom: 4px;">Nom & Prénom</label>
+        <input type="text" name="Nom" required style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;">
     </div>
     
-    <div style="margin-bottom: 10px;">
-        <label style="font-weight: bold; color: #333;">Nom de l'Entreprise / Atelier</label><br>
-        <input type="text" name="Entreprise" required style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+    <div style="margin-bottom: 12px;">
+        <label style="font-weight: bold; color: #333; display: block; margin-bottom: 4px;">Nom de l'Entreprise / Atelier</label>
+        <input type="text" name="Entreprise" required style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;">
     </div>
     
-    <div style="margin-bottom: 15px;">
-        <label style="font-weight: bold; color: #333;">Adresse Email Professionnelle</label><br>
-        <input type="email" name="Email" required style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+    <div style="margin-bottom: 16px;">
+        <label style="font-weight: bold; color: #333; display: block; margin-bottom: 4px;">Adresse Email Professionnelle</label>
+        <input type="email" name="Email" required style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;">
     </div>
     
-    <button type="submit" style="background-color: #FF4B4B; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
+    <button type="submit" style="background-color: #FF4B4B; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%;">
         🚀 Envoyer la demande de démo
     </button>
 </form>
 """
 
-st.components.v1.html(form_html, height=360)
+st.components.v1.html(form_html, height=420)
