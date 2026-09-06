@@ -1,0 +1,21 @@
+# Environnement virtuel Python
+venv/
+env/
+ENV/
+.venv/
+
+# Cache Python et fichiers compilés
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Fichiers de configuration Streamlit locaux (optionnel)
+.streamlit/secrets.toml
+
+# Fichiers générés localement
+*.pdf
+*.log
+
+# Fichiers système
+.DS_Store
+Thumbs.db
